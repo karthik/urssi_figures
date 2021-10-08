@@ -1099,7 +1099,7 @@ datmm = datm %>%
     filter(!is.na(Choice))
 ggthemr(urssi_colors)
 ggplot(datmm, aes(x = Question, fill = Choice)) +
-    facet_wrap('Q1.1') + 
+   # facet_wrap('Q1.1') + 
     geom_bar(position="dodge") + 
     labs(x = '', y = 'Frequency') +
     scale_x_discrete(labels = c("Unit", "Integration", "System", "User", "Regression"), breaks = c("Q3.5_1", "Q3.5_2", "Q3.5_3", "Q3.5_4", "Q3.5_5")) +
