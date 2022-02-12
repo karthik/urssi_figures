@@ -1,5 +1,7 @@
 # A Survey of the State of the Practice for Research Software in the United States
 
+Jeffrey C. Carver, Nicholas Weber, Karthik Ram, Sandra Gesing, and Daniel S. Katz
+
 This repository contains code to generate all the figures in the paper *A Survey of the State of the Practice for Research Software in the United States* currently in review. 
 
 ### Figure 1
