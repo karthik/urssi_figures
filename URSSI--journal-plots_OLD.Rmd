@@ -1097,18 +1097,18 @@ ggsave(file="~/Desktop/urssi_figures/svg/figure_4.svg", plot=figure4, width=10, 
 ```
 
 ```{r show = FALSE} 
-# datmm %>%
-#   group_by(Profile, Question, Choice) %>%
-#   tally() %>%
-#   left_join(tmp, by = c("Profile"="Q1.1")) %>%
-#   mutate(n = n.x,
-#          Proportion = percent(n.x/n.y)) %>%
-#   select(-c(n.x, n.y)) %>%
-#   flextable() %>%
-#   merge_v(j = ~ Profile + Question) %>%
-#   autofit() %>%
-#   border_inner_h(border = officer::fp_border(color = "black", width = 1), part = "body" ) %>%
-#     fix_border_issues()
+datmm %>%
+  group_by(Profile, Question, Choice) %>%
+  tally() %>%
+  left_join(tmp, by = c("Profile"="Q1.1")) %>%
+  mutate(n = n.x,
+         Proportion = percent(n.x/n.y)) %>%
+  select(-c(n.x, n.y)) %>%
+  flextable() %>%
+  merge_v(j = ~ Profile + Question) %>%
+  autofit() %>%
+  border_inner_h(border = officer::fp_border(color = "black", width = 1), part = "body" ) %>%
+    fix_border_issues()
 
 ```
 
@@ -1146,12 +1146,12 @@ dat = dat_na %>%
 
 dat$Q5.2 = factor(dat$Q5.2)
 
-# ggplot(dat, aes(x = Q1.1, fill = Q5.2)) +
-#     geom_bar(position="dodge") + 
-#     labs(x = '', y = 'Frequency') +
-#     theme(axis.text.x = element_text(angle = 30, hjust = 1),
-#           legend.position="bottom",
-#           legend.title = element_blank())
+ggplot(dat, aes(x = Q1.1, fill = Q5.2)) +
+    geom_bar(position="dodge") +
+    labs(x = '', y = 'Frequency') +
+    theme(axis.text.x = element_text(angle = 30, hjust = 1),
+          legend.position="bottom",
+          legend.title = element_blank())
 ```
 
 ```{r show = FALSE}
@@ -1159,12 +1159,12 @@ dat$Q5.2 = factor(dat$Q5.2)
 ```
 
 ```{r show = FALSE}
-# ggplot(dat, aes(x = Q1.1, fill = Q5.2)) +
-#     geom_bar(position = 'fill') + 
-#     labs(x = '', y = 'Proportion') +
-#     theme(axis.text.x = element_text(angle = 30, hjust = 1),
-#           legend.position="bottom",
-#           legend.title = element_blank())
+ggplot(dat, aes(x = Q1.1, fill = Q5.2)) +
+    geom_bar(position = 'fill') +
+    labs(x = '', y = 'Proportion') +
+    theme(axis.text.x = element_text(angle = 30, hjust = 1),
+          legend.position="bottom",
+          legend.title = element_blank())
 
 
 ```
@@ -1348,17 +1348,17 @@ dat = dat_na %>%
 
 dat$Q5.4 = factor(dat$Q5.4)
 
-# ggplot(dat, aes(x = Q1.1, fill = Q5.4)) +
-#     geom_bar(position="dodge") + 
-#     labs(x = '', y = 'Frequency') +
-#     theme(axis.text.x = element_text(angle = 30, hjust = 1),
-#           legend.title = element_blank())
+ggplot(dat, aes(x = Q1.1, fill = Q5.4)) +
+    geom_bar(position="dodge") +
+    labs(x = '', y = 'Frequency') +
+    theme(axis.text.x = element_text(angle = 30, hjust = 1),
+          legend.title = element_blank())
 # 
-# ggplot(dat, aes(x = Q1.1, fill = Q5.4)) +
-#     geom_bar(position='fill') + 
-#     labs(x = '', y = 'Proportion') +
-#     theme(axis.text.x = element_text(angle = 30, hjust = 1),
-#           legend.title = element_blank())
+ggplot(dat, aes(x = Q1.1, fill = Q5.4)) +
+    geom_bar(position='fill') +
+    labs(x = '', y = 'Proportion') +
+    theme(axis.text.x = element_text(angle = 30, hjust = 1),
+          legend.title = element_blank())
 ```
 
 ```{r show = FALSE, cache = TRUE}
