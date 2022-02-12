@@ -943,7 +943,7 @@ figure3 <- ggplot(datmm, aes(x = Question, fill = Choice)) +
     theme(axis.text.x = element_text(angle = 35, hjust = 1),
           legend.title = element_blank())
 figure3
-ggsave(file="~/Desktop/urssi_figures/svg/figure_3.svg", plot=figure1, width=10, height=8)
+ggsave(file="~/Desktop/urssi_figures/svg/figure_3.svg", plot=figure3, width=10, height=8)
 # ggplot(datmm, aes(x = Question, fill = Choice)) +
 #     facet_wrap('Q1.1') + 
 #     geom_bar(position = 'fill') + 
