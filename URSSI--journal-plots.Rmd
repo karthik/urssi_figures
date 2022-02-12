@@ -437,7 +437,7 @@ figure5 <- ggplot(dat, aes(x = Q1.1, fill = Q5.4)) +
     labs(x = '', y = 'Frequency') +
     theme(axis.text.x = element_text(angle = 30, hjust = 1),
         plot.title = element_text(hjust = 0.5),
-          legend.title = element_blank()) + ggtitle("Sufﬁcient Opportunities for Training")
+          legend.title = element_blank()) + ggtitle("Figure 5: Sufﬁcient Opportunities for Training")
 figure5
 ggsave(
     file = "svg/figure_5.svg",
@@ -463,7 +463,7 @@ figure6 <- ggplot(dat, aes(x = Q1.1, fill = Q5.5)) +
     labs(x = '', y = 'Frequency') +
     theme(axis.text.x = element_text(angle = 30, hjust = 1),
         plot.title = element_text(hjust = 0.5),
-          legend.title = element_blank()) + ggtitle("Sufﬁcient Time For Training")
+          legend.title = element_blank()) + ggtitle("Figure 6: Sufﬁcient Time For Training")
 figure6
 ggsave(
     file = "svg/figure_6.svg",
@@ -544,7 +544,7 @@ figure7 <- ggplot(datm, aes(x = Source, fill = Q1.1, y = Choice)) +
             "Q6.4_8",
             "Q6.4_9"
         )
-    ) + ggtitle("Sources of Funding")
+    ) + ggtitle("Figure 7: Sources of Funding")
 figure7
 ggsave(
     file = "svg/figure_7.svg",
@@ -606,7 +606,7 @@ figure8 <- ggplot(datmm, aes(x = Question, fill = Choice)) +
         legend.title = element_blank(),
         legend.position = 'bottom'
     ) +
-    guides(fill = guide_legend(nrow = 2, byrow = TRUE)) + ggtitle("Sufﬁciency of Institutional Support")
+    guides(fill = guide_legend(nrow = 2, byrow = TRUE)) + ggtitle("Figure 8: Sufﬁciency of Institutional Support")
 figure8
 ggsave(
     file = "svg/figure_8.svg",
@@ -623,7 +623,7 @@ ggsave(
 # This is figure 10
 figure10 <-
     urssi_analysis2(dat_na, x = "Q1.1", fill = "Q7.3")  + scale_fill_viridis(discrete = TRUE) + 
-    ggtitle("Opportunities For Career Advancement for Software Developers")
+    ggtitle("Figure 10: Opportunities For Career Advancement for Software Developers")
 figure10
 ggsave(
     file = "svg/figure_10.svg",
@@ -681,7 +681,7 @@ figure11 <- ggplot(datmm, aes(x = Q1.1, fill = Choice)) +
         legend.title = element_blank(),
         legend.position = 'bottom'
     ) +
-    guides(fill = guide_legend(nrow = 2, byrow = TRUE))  + ggtitle("Concerns When Trying to Hire Software Development Staff")
+    guides(fill = guide_legend(nrow = 2, byrow = TRUE))  + ggtitle("Figure 11: Concerns When Trying to Hire Software Development Staff")
 figure11
 ggsave(
     file = "svg/figure_11.svg",
@@ -741,7 +741,7 @@ figure12 <- ggplot(datmm, aes(x = Q1.1, fill = Choice)) +
         legend.position = 'bottom'
     ) +
     guides(fill = guide_legend(nrow = 2, byrow = TRUE)) + 
-    ggtitle("Concerns When Being Hired As Software Development Staff")
+    ggtitle("Figure 12: Concerns When Being Hired As Software Development Staff")
 figure12
 ggsave(
     file = "svg/figure_12.svg",
@@ -806,7 +806,7 @@ figure14 <-
         plot.title = element_text(hjust = 0.5),
         legend.title = element_blank(),
         legend.position = 'bottom'
-    ) + ggtitle("How Authors Credit Software Used In Their Research")
+    ) + ggtitle("Figure 14: How Authors Credit Software Used In Their Research")
 
 figure14
 ggsave(
@@ -866,7 +866,7 @@ figure15 <- ggplot(datmm, aes(x = Q1.1, fill = Choice)) +
         plot.title = element_text(hjust = 0.5),
         legend.title = element_blank(),
         legend.position = 'bottom'
-    ) + ggtitle("How Respondents Currently Receive Credit For Their Software Contributions")
+    ) + ggtitle("Figure 15: How Respondents Currently Receive Credit For Their Software Contributions")
 
 figure15
 
@@ -905,7 +905,7 @@ figure16 <- ggplot(dat, aes(x = Q1.1, fill = Q8.4)) +
         plot.title = element_text(hjust = 0.5),
         legend.position = 'bottom'
     ) +
-    ggtitle("Does Institution Consider Software Contributions In Performance Reviews Or Promotion Cases")
+    ggtitle("Figure 16: Does Institution Consider Software Contributions In Performance Reviews Or Promotion Cases")
 figure16
 ggsave(
     file = "svg/figure_16.svg",
@@ -948,7 +948,7 @@ figure17 <- ggplot(dat, aes(x = Q1.1, fill = Q8.5)) +
         legend.position = 'bottom'
     ) +
     guides(fill = guide_legend(nrow = 2, byrow = TRUE)) +
-    ggtitle("Importance Of Software Contributions During Performance Review Or Promotion")
+    ggtitle("Figure 17: Importance Of Software Contributions During Performance Review Or Promotion")
 figure17
 ggsave(
     file = "svg/figure_17.svg",
@@ -998,7 +998,7 @@ figure18 <- ggplot(datmm, aes(x = Q1.1, fill = Choice)) +
         legend.title = element_blank(),
         plot.title = element_text(hjust = 0.5),
         legend.position = 'bottom'
-    ) + ggtitle("How Respondents Think Their Project Does With Inclusion")
+    ) + ggtitle("Figure 18: How Respondents Think Their Project Does With Inclusion")
 
 
 figure18
@@ -1053,7 +1053,7 @@ figure9 <- ggplot(dat, aes(x = Q14.2, fill = Q1.1)) +
             "4",
             "Sufficient to do\n my work"
         )
-    ) + ggtitle("Necessary Funding to Support Software Development Activities")
+    ) + ggtitle("Figure 9: Necessary Funding to Support Software Development Activities")
 figure9
 ggsave(
     file = "svg/figure_9.svg",
@@ -1116,7 +1116,7 @@ figure13 <- ggplot(datmm, aes(x = Q1.1, fill = Choice)) +
         legend.title = element_blank()
     ) +
     guides(fill = guide_legend(nrow = 2, byrow = TRUE)) +
-    ggtitle("Importance Of Factors When Taking A Job Or Promotion")
+    ggtitle("Figure 13: Importance Of Factors When Taking A Job Or Promotion")
 
 figure13
 ggsave(
@@ -1158,7 +1158,7 @@ figure19 <- ggplot(dat, aes(x = Q17.1, fill = Q1.1)) +
         legend.position = 'bottom',
         plot.title = element_text(hjust = 0.5),
         legend.title = element_blank()
-    ) +  ggtitle("Whether The Respondents’ Projects Have A Diversity/inclusion Statement")
+    ) +  ggtitle("Figure 19: Whether The Respondents’ Projects Have A Diversity/inclusion Statement")
 figure19
 ggsave(
     file = "svg/figure_19.svg",
@@ -1196,7 +1196,7 @@ figure20 <- ggplot(dat, aes(x = Q17.3, fill = Q1.1)) +
         legend.position = 'bottom',
         plot.title = element_text(hjust = 0.5),
         legend.title = element_blank()
-    ) + ggtitle("Whether The Respondents’ Projects Have A Code Of Conduct")
+    ) + ggtitle("Figure 20: Whether The Respondents’ Projects Have A Code Of Conduct")
 figure20
 ggsave(
     file = "svg/figure_20.svg",
@@ -1269,7 +1269,7 @@ figure21 <- ggplot(datmm, aes(x = Practice, fill = Q1.1)) +
             'Developing a code\n of conduct',
             'Developing a diversity/\n inclusivity policy'
         )
-    ) + ggtitle("Type Of Support Needed For Inclusion And Diversity")
+    ) + ggtitle("Figure 21: Type Of Support Needed For Inclusion And Diversity")
 
 figure21
 ggsave(
