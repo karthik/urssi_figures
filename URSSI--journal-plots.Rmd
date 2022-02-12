@@ -290,7 +290,7 @@ datmm = datm %>%
     filter(Difficult == 'Yes')
 
 figure2 <- ggplot(datmm, aes(x = Aspects, fill = Q1.1)) +
-    geom_bar() +
+    geom_bar(color = "black") +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
     theme(
@@ -347,7 +347,7 @@ datmm = datm %>%
 figure3 <- ggplot(datmm, aes(x = Question, fill = Choice)) +
     facet_wrap('Q1.1') +
     scale_fill_viridis(discrete = TRUE) +
-    geom_bar(position = "dodge") +
+    geom_bar(position = "dodge", color = "black") +
     labs(x = '', y = 'Frequency') +
     scale_x_discrete(
         labels = c("Unit", "Integration", "System", "User", "Regression"),
@@ -401,7 +401,7 @@ datmm = datm %>%
     filter(!is.na(Choice))
 
 figure4 <- ggplot(datmm, aes(x = Question, fill = Choice)) +
-    geom_bar(position = "dodge") +
+    geom_bar(position = "dodge", color = "black") +
     scale_fill_viridis(discrete = TRUE) +
     labs(x = '', y = 'Frequency') +
     theme(
@@ -432,7 +432,7 @@ dat = dat_na %>%
 dat$Q5.4 = factor(dat$Q5.4)
 
 figure5 <- ggplot(dat, aes(x = Q1.1, fill = Q5.4)) +
-    geom_bar(position = "dodge") +
+    geom_bar(position = "dodge", color = "black") +
     scale_fill_viridis(discrete = TRUE) +
     labs(x = '', y = 'Frequency') +
     theme(axis.text.x = element_text(angle = 30, hjust = 1),
@@ -458,7 +458,7 @@ dat <- dat_na %>%
 dat$Q5.5 = factor(dat$Q5.5)
 
 figure6 <- ggplot(dat, aes(x = Q1.1, fill = Q5.5)) +
-    geom_bar(position = "dodge") +
+    geom_bar(position = "dodge", color = "black") +
     scale_fill_viridis(discrete = TRUE) +
     labs(x = '', y = 'Frequency') +
     theme(axis.text.x = element_text(angle = 30, hjust = 1),
@@ -597,7 +597,7 @@ datmm = datm %>%
 
 
 figure8 <- ggplot(datmm, aes(x = Question, fill = Choice)) +
-    geom_bar(position = "dodge") +
+    geom_bar(position = "dodge", color = "black") +
     scale_fill_viridis(discrete = TRUE) +
     labs(x = '', y = 'Frequency') +
     theme(
@@ -672,7 +672,7 @@ datmm <- datm %>% filter(!is.na(Choice))
 
 figure11 <- ggplot(datmm, aes(x = Q1.1, fill = Choice)) +
     facet_wrap("Question") +
-    geom_bar(position = "dodge") +
+    geom_bar(position = "dodge", color = "black") +
     scale_fill_viridis(discrete = TRUE) +
     labs(x = '', y = 'Frequency') +
     theme(
@@ -731,7 +731,7 @@ datmm = datm %>%
 
 figure12 <- ggplot(datmm, aes(x = Q1.1, fill = Choice)) +
     facet_wrap("Question") +
-    geom_bar(position = "dodge") +
+    geom_bar(position = "dodge", color = "black") +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
     theme(
@@ -794,7 +794,7 @@ datmm$Choice <- droplevels(datmm$Choice)
 figure14 <-
     datmm %>% filter(Question != "Other")  %>% ggplot(aes(x = Q1.1, fill = Choice)) +
     facet_wrap("Question", labeller = label_wrap_gen(width = 25)) +
-    geom_bar(position = "dodge") +
+    geom_bar(position = "dodge", color = "black") +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
     theme(
@@ -858,7 +858,7 @@ datmm = datm %>%
 
 figure15 <- ggplot(datmm, aes(x = Q1.1, fill = Choice)) +
     facet_wrap("Question", labeller = label_wrap_gen(width = 25)) +
-    geom_bar(position = "dodge") +
+    geom_bar(position = "dodge", color = "black") +
     scale_fill_viridis(discrete = TRUE) +
     labs(x = '', y = 'Frequency') +
     theme(
@@ -896,7 +896,7 @@ dat = dat_na %>%
 
 
 figure16 <- ggplot(dat, aes(x = Q1.1, fill = Q8.4)) +
-    geom_bar(position = "dodge") +
+    geom_bar(position = "dodge", color = "black") +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
     theme(
@@ -938,7 +938,7 @@ dat = dat_na %>%
 
 
 figure17 <- ggplot(dat, aes(x = Q1.1, fill = Q8.5)) +
-    geom_bar(position = "dodge") +
+    geom_bar(position = "dodge", color = "black") +
     scale_fill_viridis(discrete = TRUE) +
     labs(x = '', y = 'Frequency') +
     theme(
@@ -990,7 +990,7 @@ datmm = datm %>%
 
 figure18 <- ggplot(datmm, aes(x = Q1.1, fill = Choice)) +
     facet_wrap("Question", labeller = label_wrap_gen(width = 40)) +
-    geom_bar(position = "dodge") +
+    geom_bar(position = "dodge", color = "black") +
     scale_fill_viridis(discrete = TRUE) +
     labs(x = '', y = 'Frequency') +
     theme(
@@ -1035,7 +1035,7 @@ dat$Q14.2 = factor(
 )
 
 figure9 <- ggplot(dat, aes(x = Q14.2, fill = Q1.1)) +
-    geom_bar() +
+    geom_bar(color = "black") +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
     theme(
@@ -1106,7 +1106,7 @@ datmm$Choice = factor(
 
 figure13 <- ggplot(datmm, aes(x = Q1.1, fill = Choice)) +
     facet_wrap("Question", labeller = label_wrap_gen(width = 25)) +
-    geom_bar() +
+    geom_bar(color = "black") +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
     theme(
@@ -1150,7 +1150,7 @@ dat$Q17.1 = factor(
 )
 
 figure19 <- ggplot(dat, aes(x = Q17.1, fill = Q1.1)) +
-    geom_bar() +
+    geom_bar(color = "black") +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
     theme(
@@ -1188,7 +1188,7 @@ dat$Q17.3 = factor(
 )
 
 figure20 <- ggplot(dat, aes(x = Q17.3, fill = Q1.1)) +
-    geom_bar() +
+    geom_bar(color = "black") +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
     theme(
@@ -1252,7 +1252,7 @@ datmm = datm %>%
     filter(Included == 'Included')
 
 figure21 <- ggplot(datmm, aes(x = Practice, fill = Q1.1)) +
-    geom_bar() +
+    geom_bar(color = "black") +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
     theme(

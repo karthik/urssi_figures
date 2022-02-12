@@ -97,7 +97,7 @@ urssi_analysis2 <- function(dat, x, fill) {
     # create the ggplot
     ggplot(aes(x = get(x), fill = get(fill))) +
     # dodge makes the bars side by side
-    geom_bar(position = "dodge") +
+    geom_bar(position = "dodge", color = "black") +
     # change the label of the y axis to Frequency
     labs(x = '', y = 'Frequency') +
     # make the xaxis text labels angled to fit better
