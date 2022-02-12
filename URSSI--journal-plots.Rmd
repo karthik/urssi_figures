@@ -210,6 +210,7 @@ datm$Question <- recode_factor(datm$Question, Software = "Design")
 foo <- levels(datm$Question)
 datm$Question <-
     forcats::fct_relevel(datm$Question, "Requirements", "Design")
+
 library(viridis)
 figure1 <- datm %>%
     ggplot(aes(x = Q1.1, fill = Time, y = value)) +
