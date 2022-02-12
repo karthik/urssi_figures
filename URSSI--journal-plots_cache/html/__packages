@@ -1,4 +1,3 @@
-base
 usethis
 devtools
 testthat
@@ -28,3 +27,4 @@ revgeo
 mapproj
 emmeans
 ggthemr
+ggwordcloud
