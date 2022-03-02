@@ -231,13 +231,12 @@ figure1 <- datm %>%
             70
         ),
         y = "Percent of time"
-    )
-figure1
+    )  
 ggsave(
     file = "svg/figure_1.svg",
     plot = figure1,
-    width = 10,
-    height = 8
+    width = 7,
+    height = 5
 )
 ```
 
