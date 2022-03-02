@@ -236,8 +236,8 @@ figure1 <- datm %>%
 ggsave(
     file = "svg/figure_1.svg",
     plot = figure1,
-    width = 7,
-    height = 5
+    width = 16,
+    height = 9
 )
 ```
 
