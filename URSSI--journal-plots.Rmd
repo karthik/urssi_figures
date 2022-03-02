@@ -231,7 +231,8 @@ figure1 <- datm %>%
             70
         ),
         y = "Percent of time"
-    )  
+    )   + theme(axis.text.x = element_text(vjust = -4),
+                legend.spacing.x = unit(1.0, 'cm')) 
 ggsave(
     file = "svg/figure_1.svg",
     plot = figure1,
