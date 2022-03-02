@@ -206,7 +206,7 @@ datm$Question <-
 library(viridis)
 figure1 <- datm %>%
     ggplot(aes(x = Q1.1, fill = Time, y = value)) +
-    facet_wrap(vars(Question, Q1.1)) +
+    facet_wrap(vars(Question)) +
     scale_fill_viridis(discrete = TRUE) +
     geom_boxplot(fatten = NULL, outlier.size = .5) +
     stat_summary(
