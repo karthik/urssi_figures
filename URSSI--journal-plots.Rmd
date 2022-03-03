@@ -226,10 +226,6 @@ figure1 <- datm %>%
         axis.title.y = element_text(size = 12)
     ) +
     labs(
-        title = str_wrap(
-            "Are Respondents Spending More Time On Tasks Than They Would Like Ideally?",
-            70
-        ),
         y = "Percent of time"
     )   + theme(axis.text.x = element_text(vjust = -4),
                 legend.spacing.x = unit(1.0, 'cm')) 
