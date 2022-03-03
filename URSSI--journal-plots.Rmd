@@ -233,6 +233,7 @@ figure1 <- datm %>%
         y = "Percent of time"
     )   + theme(axis.text.x = element_text(vjust = -4),
                 legend.spacing.x = unit(1.0, 'cm')) 
+figure1
 ggsave(
     file = "svg/figure_1.svg",
     plot = figure1,
@@ -289,6 +290,22 @@ colnames(datm) = c('Q1.1', 'Aspects', 'Difficult')
 datmm = datm %>%
     filter(Difficult == 'Yes')
 
+ # new_datmm <- datmm
+ # new_datmm$Aspects <-
+ #     datmm %>% mutate(
+ #         Aspects = case_when(
+ #             Aspects == "Project\nManagement" ~ "Proj Mgt",
+ #             Aspects == "Requirements\nelicitation/engineering" ~ "Requirements",
+ #         Aspects == "Finding personnel/\nDeveloper turnover" ~ "Personnel",
+ #         Aspects == "Communication" ~ "Communication",
+ #         Aspects == "Use of best practices vs.\nneed for rapid delivery" ~ "Best Practices",
+ #         Aspects == "Keeping up with\nmodern tools" ~ "Modern Tools",
+ #         Aspects == "Porting" ~ "Porting",
+ #         Aspects == "Testing" ~ "Testing",
+ #         Aspects == "Debugging" ~ "Debugging",
+ #         Aspects == "Other" ~ "Other",
+ #         Aspects == "None" ~ "None"))
+ # 
 figure2 <- ggplot(datmm, aes(x = Aspects, fill = Q1.1)) +
     geom_bar(color = "black") +
     labs(x = '', y = 'Frequency') +
@@ -297,12 +314,12 @@ figure2 <- ggplot(datmm, aes(x = Aspects, fill = Q1.1)) +
         axis.text.x = element_text(
             angle = 30,
             hjust = 1,
-            size = rel(.9)
+            size = rel(1.2)
         ),
         legend.position = 'bottom',
         plot.title = element_text(hjust = 0.5),
         legend.title = element_blank() 
-    ) + ggtitle("Aspects of software development that are more difﬁcult than they should be")
+    )  +  scale_x_discrete(labels = c('Proj Mgt','Requirements','Personnel','Communication', 'Best Practices', 'Modern Tools', 'Porting', 'Testing', 'Debugging', 'Other', 'None'))
 
 figure2
 ggsave(
@@ -353,9 +370,10 @@ figure3 <- ggplot(datmm, aes(x = Question, fill = Choice)) +
         labels = c("Unit", "Integration", "System", "User", "Regression"),
         breaks = c("Q3.5_1", "Q3.5_2", "Q3.5_3", "Q3.5_4", "Q3.5_5")
     ) +
-    theme(axis.text.x = element_text(angle = 35, hjust = 1),
+    theme(
+        axis.text.x = element_text(angle = 35, hjust = 1, size = rel(1.2)),
         plot.title = element_text(hjust = 0.5),
-          legend.title = element_blank()) + ggtitle(" Use of Testing")
+          legend.title = element_blank()) 
 figure3
 ggsave(
     file = "svg/figure_3.svg",
@@ -405,12 +423,12 @@ figure4 <- ggplot(datmm, aes(x = Question, fill = Choice)) +
     scale_fill_viridis(discrete = TRUE) +
     labs(x = '', y = 'Frequency') +
     theme(
-        axis.text.x = element_text(angle = 30, hjust = 1),
+        axis.text.x = element_text(angle = 35, hjust = 1, size = rel(1.2)),
         legend.position = "bottom",
         plot.title = element_text(hjust = 0.5),
         legend.title = element_blank()
     ) +
-    guides(fill = guide_legend(nrow = 2, byrow = TRUE)) + ggtitle("Availability of Tool Support")
+    guides(fill = guide_legend(nrow = 2, byrow = TRUE))   +  scale_x_discrete(labels = c('Requirements','SW Architecture/Design','Coding', 'Testing', 'Debugging', 'Maintenance', 'Documentation'))
 figure4
 ggsave(
     file = "svg/figure_4.svg",
@@ -435,9 +453,9 @@ figure5 <- ggplot(dat, aes(x = Q1.1, fill = Q5.4)) +
     geom_bar(position = "dodge", color = "black") +
     scale_fill_viridis(discrete = TRUE) +
     labs(x = '', y = 'Frequency') +
-    theme(axis.text.x = element_text(angle = 30, hjust = 1),
+    theme(axis.text.x = element_text(angle = 30, hjust = 1, size = rel(1.2)),
         plot.title = element_text(hjust = 0.5),
-          legend.title = element_blank()) + ggtitle("Sufﬁcient Opportunities for Training")
+          legend.title = element_blank()) 
 figure5
 ggsave(
     file = "svg/figure_5.svg",
@@ -461,9 +479,9 @@ figure6 <- ggplot(dat, aes(x = Q1.1, fill = Q5.5)) +
     geom_bar(position = "dodge", color = "black") +
     scale_fill_viridis(discrete = TRUE) +
     labs(x = '', y = 'Frequency') +
-    theme(axis.text.x = element_text(angle = 30, hjust = 1),
+    theme(axis.text.x = element_text(angle = 30, hjust = 1, size = rel(1.2)),
         plot.title = element_text(hjust = 0.5),
-          legend.title = element_blank()) + ggtitle("Sufﬁcient Time For Training")
+          legend.title = element_blank()) 
 figure6
 ggsave(
     file = "svg/figure_6.svg",
@@ -518,7 +536,7 @@ figure7 <- ggplot(datm, aes(x = Source, fill = Q1.1, y = Choice)) +
         y = '% Funding',
         caption = "Middle line indicates mean."
     ) +
-    theme(axis.text.x = element_text(angle = 30, hjust = 1),
+    theme(axis.text.x = element_text(angle = 30, hjust = 1, size = rel(1.2)),
         plot.title = element_text(hjust = 0.5),
           legend.title = element_blank()) +
     scale_x_discrete(
@@ -544,7 +562,7 @@ figure7 <- ggplot(datm, aes(x = Source, fill = Q1.1, y = Choice)) +
             "Q6.4_8",
             "Q6.4_9"
         )
-    ) + ggtitle("Sources of Funding")
+    ) 
 figure7
 ggsave(
     file = "svg/figure_7.svg",
@@ -601,12 +619,12 @@ figure8 <- ggplot(datmm, aes(x = Question, fill = Choice)) +
     scale_fill_viridis(discrete = TRUE) +
     labs(x = '', y = 'Frequency') +
     theme(
-        axis.text.x = element_text(angle = 30, hjust = 1),
+        axis.text.x = element_text(angle = 30, hjust = 1, size = rel(1.2)),
         plot.title = element_text(hjust = 0.5),
         legend.title = element_blank(),
         legend.position = 'bottom'
     ) +
-    guides(fill = guide_legend(nrow = 2, byrow = TRUE)) + ggtitle("Sufﬁciency of Institutional Support")
+    guides(fill = guide_legend(nrow = 2, byrow = TRUE)) 
 figure8
 ggsave(
     file = "svg/figure_8.svg",
@@ -676,12 +694,12 @@ figure11 <- ggplot(datmm, aes(x = Q1.1, fill = Choice)) +
     scale_fill_viridis(discrete = TRUE) +
     labs(x = '', y = 'Frequency') +
     theme(
-        axis.text.x = element_text(angle = 30, hjust = 1),
+        axis.text.x = element_text(angle = 30, hjust = 1, size = rel(1.2)),
         plot.title = element_text(hjust = 0.5),
         legend.title = element_blank(),
         legend.position = 'bottom'
     ) +
-    guides(fill = guide_legend(nrow = 2, byrow = TRUE))  + ggtitle("Concerns When Trying to Hire Software Development Staff")
+    guides(fill = guide_legend(nrow = 2, byrow = TRUE))  
 figure11
 ggsave(
     file = "svg/figure_11.svg",
@@ -735,7 +753,7 @@ figure12 <- ggplot(datmm, aes(x = Q1.1, fill = Choice)) +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
     theme(
-        axis.text.x = element_text(angle = 30, hjust = 1),
+        axis.text.x = element_text(angle = 30, hjust = 1, size = rel(1.2)),
         plot.title = element_text(hjust = 0.5),
         legend.title = element_blank(),
         legend.position = 'bottom'
@@ -803,10 +821,10 @@ figure14 <-
             hjust = .9,
             size = rel(.8)
         ),
-        plot.title = element_text(hjust = 0.5),
+        plot.title = element_text(hjust = 0.5, size = rel(1.2)),
         legend.title = element_blank(),
         legend.position = 'bottom'
-    ) + ggtitle("How Authors Credit Software Used In Their Research")
+    ) 
 
 figure14
 ggsave(
@@ -862,11 +880,11 @@ figure15 <- ggplot(datmm, aes(x = Q1.1, fill = Choice)) +
     scale_fill_viridis(discrete = TRUE) +
     labs(x = '', y = 'Frequency') +
     theme(
-        axis.text.x = element_text(angle = 40, hjust = 1),
+        axis.text.x = element_text(angle = 40, hjust = 1, size = rel(1.2)),
         plot.title = element_text(hjust = 0.5),
         legend.title = element_blank(),
         legend.position = 'bottom'
-    ) + ggtitle("How Respondents Currently Receive Credit For Their Software Contributions")
+    ) 
 
 figure15
 
@@ -900,7 +918,7 @@ figure16 <- ggplot(dat, aes(x = Q1.1, fill = Q8.4)) +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
     theme(
-        axis.text.x = element_text(angle = 40, hjust = 1),
+        axis.text.x = element_text(angle = 40, hjust = 1, size = rel(1.2)),
         legend.title = element_blank(),
         plot.title = element_text(hjust = 0.5),
         legend.position = 'bottom'
@@ -942,7 +960,7 @@ figure17 <- ggplot(dat, aes(x = Q1.1, fill = Q8.5)) +
     scale_fill_viridis(discrete = TRUE) +
     labs(x = '', y = 'Frequency') +
     theme(
-        axis.text.x = element_text(angle = 30, hjust = 1),
+        axis.text.x = element_text(angle = 30, hjust = 1, size = rel(1.2)),
         legend.title = element_blank(),
         plot.title = element_text(hjust = 0.5),
         legend.position = 'bottom'
@@ -994,11 +1012,11 @@ figure18 <- ggplot(datmm, aes(x = Q1.1, fill = Choice)) +
     scale_fill_viridis(discrete = TRUE) +
     labs(x = '', y = 'Frequency') +
     theme(
-        axis.text.x = element_text(angle = 40, hjust = 1),
+        axis.text.x = element_text(angle = 40, hjust = 1, size = rel(1.2)),
         legend.title = element_blank(),
         plot.title = element_text(hjust = 0.5),
         legend.position = 'bottom'
-    ) + ggtitle("How Respondents Think Their Project Does With Inclusion")
+    ) 
 
 
 figure18
@@ -1039,7 +1057,7 @@ figure9 <- ggplot(dat, aes(x = Q14.2, fill = Q1.1)) +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
     theme(
-        axis.text.x = element_text(angle = 30, hjust = 1),
+        axis.text.x = element_text(angle = 30, hjust = 1, size = rel(1.2)),
         legend.position = 'bottom',
         plot.title = element_text(hjust = 0.5),
         legend.title = element_blank()
@@ -1053,7 +1071,7 @@ figure9 <- ggplot(dat, aes(x = Q14.2, fill = Q1.1)) +
             "4",
             "Sufficient to do\n my work"
         )
-    ) + ggtitle("Necessary Funding to Support Software Development Activities")
+    ) 
 figure9
 ggsave(
     file = "svg/figure_9.svg",
@@ -1110,7 +1128,7 @@ figure13 <- ggplot(datmm, aes(x = Q1.1, fill = Choice)) +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
     theme(
-        axis.text.x = element_text(angle = 30, hjust = 1),
+        axis.text.x = element_text(angle = 30, hjust = 1, size = rel(1.2)),
         legend.position = 'bottom',
         plot.title = element_text(hjust = 0.5),
         legend.title = element_blank()
@@ -1154,7 +1172,7 @@ figure19 <- ggplot(dat, aes(x = Q17.1, fill = Q1.1)) +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
     theme(
-        axis.text.x = element_text(angle = 30, hjust = 1),
+        axis.text.x = element_text(angle = 30, hjust = 1, size = rel(1.2)),
         legend.position = 'bottom',
         plot.title = element_text(hjust = 0.5),
         legend.title = element_blank()
@@ -1192,11 +1210,11 @@ figure20 <- ggplot(dat, aes(x = Q17.3, fill = Q1.1)) +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
     theme(
-        axis.text.x = element_text(angle = 30, hjust = 1),
+        axis.text.x = element_text(angle = 30, hjust = 1, size = rel(1.2)),
         legend.position = 'bottom',
         plot.title = element_text(hjust = 0.5),
         legend.title = element_blank()
-    ) + ggtitle("Whether The Respondents’ Projects Have A Code Of Conduct")
+    ) 
 figure20
 ggsave(
     file = "svg/figure_20.svg",
@@ -1256,7 +1274,7 @@ figure21 <- ggplot(datmm, aes(x = Practice, fill = Q1.1)) +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
     theme(
-        axis.text.x = element_text(angle = 30, hjust = 1),
+        axis.text.x = element_text(angle = 30, hjust = 1, size = rel(1.2)),
         legend.position = 'bottom',
         plot.title = element_text(hjust = 0.5),
         legend.title = element_blank()
@@ -1269,7 +1287,7 @@ figure21 <- ggplot(datmm, aes(x = Practice, fill = Q1.1)) +
             'Developing a code\n of conduct',
             'Developing a diversity/\n inclusivity policy'
         )
-    ) + ggtitle("Type Of Support Needed For Inclusion And Diversity")
+    ) 
 
 figure21
 ggsave(
