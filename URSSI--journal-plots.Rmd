@@ -236,6 +236,13 @@ ggsave(
     width = 16,
     height = 9
 )
+ggsave(
+    file = "png/figure_1.png",
+    plot = figure1,
+    width = 16,
+    height = 9
+)
+
 ```
 
 
@@ -309,6 +316,12 @@ ggsave(
     width = 10,
     height = 8
 )
+ggsave(
+    file = "png/figure_2.png",
+    plot = figure2,
+    width = 10,
+    height = 8
+)
 
 tmp3 = dat_na %>%
     filter(Q1.1 == 'Combination' | Q1.1 == 'Developers') %>%
@@ -362,6 +375,13 @@ ggsave(
     width = 10,
     height = 8
 )
+ggsave(
+    file = "png/figure_3.png",
+    plot = figure3,
+    width = 10,
+    height = 8
+)
+
 ```
 
 
@@ -417,6 +437,12 @@ ggsave(
     width = 10,
     height = 8
 )
+ggsave(
+    file = "png/figure_4.png",
+    plot = figure4,
+    width = 10,
+    height = 8
+)
 
 
 ```
@@ -444,6 +470,13 @@ ggsave(
     width = 10,
     height = 8
 )
+ggsave(
+    file = "png/figure_5.png",
+    plot = figure5,
+    width = 10,
+    height = 8
+)
+
 ```
 
 
@@ -466,6 +499,12 @@ figure6 <- ggplot(dat, aes(x = Q1.1, fill = Q5.5)) +
 figure6
 ggsave(
     file = "svg/figure_6.svg",
+    plot = figure6,
+    width = 10,
+    height = 8
+)
+ggsave(
+    file = "png/figure_6.png",
     plot = figure6,
     width = 10,
     height = 8
@@ -551,6 +590,13 @@ ggsave(
     width = 10,
     height = 8
 )
+ggsave(
+    file = "png/figure_7.png",
+    plot = figure7,
+    width = 10,
+    height = 8
+)
+
 ```
 
 
@@ -613,6 +659,12 @@ ggsave(
     width = 10,
     height = 8
 )
+ggsave(
+    file = "png/figure_8.png",
+    plot = figure8,
+    width = 10,
+    height = 8
+)
 
 ```
 
@@ -630,6 +682,13 @@ ggsave(
     width = 10,
     height = 8
 )
+ggsave(
+    file = "png/figure_10.png",
+    plot = figure10,
+    width = 10,
+    height = 8
+)
+
 ```
 
 
@@ -688,6 +747,13 @@ ggsave(
     width = 10,
     height = 8
 )
+ggsave(
+    file = "png/figure_11.png",
+    plot = figure11,
+    width = 10,
+    height = 8
+)
+
 ```
 
 
@@ -744,6 +810,12 @@ figure12 <- ggplot(datmm, aes(x = Q1.1, fill = Choice)) +
 figure12
 ggsave(
     file = "svg/figure_12.svg",
+    plot = figure12,
+    width = 10,
+    height = 8
+)
+ggsave(
+    file = "png/figure_12.png",
     plot = figure12,
     width = 10,
     height = 8
@@ -814,6 +886,12 @@ ggsave(
     width = 10,
     height = 8
 )
+ggsave(
+    file = "png/figure_14.png",
+    plot = figure14,
+    width = 10,
+    height = 8
+)
 
 ```
 
@@ -875,6 +953,12 @@ ggsave(
     width = 10,
     height = 8
 )
+ ggsave(
+    file = "png/figure_15.png",
+    plot = figure15,
+    width = 10,
+    height = 8
+)
  
 ```
 
@@ -908,6 +992,12 @@ figure16 <- ggplot(dat, aes(x = Q1.1, fill = Q8.4)) +
 figure16
 ggsave(
     file = "svg/figure_16.svg",
+    plot = figure16,
+    width = 10,
+    height = 8
+)
+ggsave(
+    file = "png/figure_16.png",
     plot = figure16,
     width = 10,
     height = 8
@@ -951,6 +1041,12 @@ figure17 <- ggplot(dat, aes(x = Q1.1, fill = Q8.5)) +
 figure17
 ggsave(
     file = "svg/figure_17.svg",
+    plot = figure17,
+    width = 10,
+    height = 8
+)
+ggsave(
+    file = "png/figure_17.png",
     plot = figure17,
     width = 10,
     height = 8
@@ -1003,6 +1099,12 @@ figure18 <- ggplot(datmm, aes(x = Q1.1, fill = Choice)) +
 figure18
 ggsave(
     file = "svg/figure_18.svg",
+    plot = figure18,
+    width = 10,
+    height = 8
+)
+ggsave(
+    file = "png/figure_18.png",
     plot = figure18,
     width = 10,
     height = 8
@@ -1060,6 +1162,13 @@ ggsave(
     width = 10,
     height = 8
 )
+ggsave(
+    file = "png/figure_9.png",
+    plot = figure9,
+    width = 10,
+    height = 8
+)
+
 ```
 
 
@@ -1124,6 +1233,13 @@ ggsave(
     width = 10,
     height = 8
 )
+ggsave(
+    file = "png/figure_13.png",
+    plot = figure13,
+    width = 10,
+    height = 8
+)
+
 ```
 
 
@@ -1165,6 +1281,13 @@ ggsave(
     width = 10,
     height = 8
 )
+ggsave(
+    file = "png/figure_19.png",
+    plot = figure19,
+    width = 10,
+    height = 8
+)
+
 ```
 
 
@@ -1197,8 +1320,16 @@ figure20 <- ggplot(dat, aes(x = Q17.3, fill = Q1.1)) +
         legend.title = element_blank()
     ) 
 figure20
+
 ggsave(
     file = "svg/figure_20.svg",
+    plot = figure20,
+    width = 10,
+    height = 8
+)
+
+ggsave(
+    file = "png/figure_20.png",
     plot = figure20,
     width = 10,
     height = 8
@@ -1277,4 +1408,12 @@ ggsave(
     width = 10,
     height = 8
 )
+
+ggsave(
+    file = "png/figure_21.png",
+    plot = figure21,
+    width = 10,
+    height = 8
+)
+
 ```
