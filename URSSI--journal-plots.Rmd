@@ -286,22 +286,7 @@ colnames(datm) = c('Q1.1', 'Aspects', 'Difficult')
 datmm = datm %>%
     filter(Difficult == 'Yes')
 
- # new_datmm <- datmm
- # new_datmm$Aspects <-
- #     datmm %>% mutate(
- #         Aspects = case_when(
- #             Aspects == "Project\nManagement" ~ "Proj Mgt",
- #             Aspects == "Requirements\nelicitation/engineering" ~ "Requirements",
- #         Aspects == "Finding personnel/\nDeveloper turnover" ~ "Personnel",
- #         Aspects == "Communication" ~ "Communication",
- #         Aspects == "Use of best practices vs.\nneed for rapid delivery" ~ "Best Practices",
- #         Aspects == "Keeping up with\nmodern tools" ~ "Modern Tools",
- #         Aspects == "Porting" ~ "Porting",
- #         Aspects == "Testing" ~ "Testing",
- #         Aspects == "Debugging" ~ "Debugging",
- #         Aspects == "Other" ~ "Other",
- #         Aspects == "None" ~ "None"))
- # 
+
 figure2 <- ggplot(datmm, aes(x = Aspects, fill = Q1.1)) +
     geom_bar(color = "black") +
     labs(x = '', y = 'Frequency') +
