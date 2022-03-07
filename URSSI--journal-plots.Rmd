@@ -1218,7 +1218,7 @@ datmm$Choice = factor(
 
 figure13 <- ggplot(datmm, aes(x = Q1.1, fill = Choice)) +
     facet_wrap("Question", labeller = label_wrap_gen(width = 25)) +
-    geom_bar(color = "black") +
+    geom_bar(color = "black", position = position_dodge2(width = 0.9, preserve = "single")) +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
     theme(
@@ -1227,8 +1227,7 @@ figure13 <- ggplot(datmm, aes(x = Q1.1, fill = Choice)) +
         plot.title = element_text(hjust = 0.5),
         legend.title = element_blank()
     ) +
-    guides(fill = guide_legend(nrow = 2, byrow = TRUE)) +
-    ggtitle("Importance Of Factors When Taking A Job Or Promotion")
+    guides(fill = guide_legend(nrow = 2, byrow = TRUE)) 
 
 figure13
 ggsave(
