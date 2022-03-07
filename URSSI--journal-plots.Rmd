@@ -302,7 +302,11 @@ figure2 <- ggplot(datmm, aes(x = Aspects, fill = Q1.1)) +
         axis.text.x = element_text(
             angle = 30,
             hjust = 1,
-            size = rel(1.2)
+            size = rel(1.3)
+            ),
+        axis.text.y = element_text(
+            hjust = 1,
+            size = rel(1.3)
         ),
         legend.position = 'bottom',
         plot.title = element_text(hjust = 0.5),
@@ -1268,12 +1272,20 @@ figure19 <- ggplot(dat, aes(x = Q17.1, fill = Q1.1)) +
     geom_bar(color = "black") +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
-    theme(
-        axis.text.x = element_text(angle = 30, hjust = 1, size = rel(1.2)),
+      theme(
+        axis.text.x = element_text(
+            angle = 30,
+            hjust = 1,
+            size = rel(1.3)
+            ),
+        axis.text.y = element_text(
+            hjust = 1,
+            size = rel(1.3)
+        ),
         legend.position = 'bottom',
         plot.title = element_text(hjust = 0.5),
-        legend.title = element_blank()
-    ) +  ggtitle("Whether The Respondents’ Projects Have A Diversity/inclusion Statement")
+        legend.title = element_blank() 
+    ) + scale_x_discrete(labels=c("Yes", "No, will develop", "No, will not develop", "Other"))
 figure19
 ggsave(
     file = "svg/figure_19.svg",
@@ -1313,12 +1325,20 @@ figure20 <- ggplot(dat, aes(x = Q17.3, fill = Q1.1)) +
     geom_bar(color = "black") +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
-    theme(
-        axis.text.x = element_text(angle = 30, hjust = 1, size = rel(1.2)),
+      theme(
+        axis.text.x = element_text(
+            angle = 30,
+            hjust = 1,
+            size = rel(1.3)
+            ),
+        axis.text.y = element_text(
+            hjust = 1,
+            size = rel(1.3)
+        ),
         legend.position = 'bottom',
         plot.title = element_text(hjust = 0.5),
-        legend.title = element_blank()
-    ) 
+        legend.title = element_blank() 
+    )
 figure20
 
 ggsave(
@@ -1386,10 +1406,18 @@ figure21 <- ggplot(datmm, aes(x = Practice, fill = Q1.1)) +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
     theme(
-        axis.text.x = element_text(angle = 30, hjust = 1, size = rel(1.2)),
+        axis.text.x = element_text(
+            angle = 30,
+            hjust = 1,
+            size = rel(1.3)
+            ),
+        axis.text.y = element_text(
+            hjust = 1,
+            size = rel(1.3)
+        ),
         legend.position = 'bottom',
         plot.title = element_text(hjust = 0.5),
-        legend.title = element_blank()
+        legend.title = element_blank() 
     ) +
     scale_x_discrete(
         labels = c(
