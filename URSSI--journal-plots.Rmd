@@ -295,7 +295,7 @@ datmm = datm %>%
 
 
 figure2 <- ggplot(datmm, aes(x = Aspects, fill = Q1.1)) +
-    geom_bar(color = "black") +
+    geom_bar(color = "black", position = position_dodge2(width = 0.9, preserve = "single")) +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
     theme(
@@ -1269,7 +1269,7 @@ dat$Q17.1 = factor(
 )
 
 figure19 <- ggplot(dat, aes(x = Q17.1, fill = Q1.1)) +
-    geom_bar(color = "black") +
+    geom_bar(color = "black", position = "dodge") +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
       theme(
@@ -1322,7 +1322,7 @@ dat$Q17.3 = factor(
 )
 
 figure20 <- ggplot(dat, aes(x = Q17.3, fill = Q1.1)) +
-    geom_bar(color = "black") +
+    geom_bar(color = "black", position = position_dodge2(width = 0.9, preserve = "single")) +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
       theme(
@@ -1402,7 +1402,7 @@ datmm = datm %>%
     filter(Included == 'Included')
 
 figure21 <- ggplot(datmm, aes(x = Practice, fill = Q1.1)) +
-    geom_bar(color = "black") +
+    geom_bar(color = "black", position = position_dodge2(width = 0.9, preserve = "single")) +
     labs(x = '', y = 'Frequency') +
     scale_fill_viridis(discrete = TRUE) +
     theme(
