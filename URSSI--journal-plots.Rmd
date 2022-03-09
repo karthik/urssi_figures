@@ -677,8 +677,7 @@ ggsave(
 ```{r figure10, cache = TRUE}
 # This is figure 10
 figure10 <-
-    urssi_analysis2(dat_na, x = "Q1.1", fill = "Q7.3")  + scale_fill_viridis(discrete = TRUE) + 
-    ggtitle("Opportunities For Career Advancement for Software Developers")
+    urssi_analysis2(dat_na, x = "Q1.1", fill = "Q7.3")  + scale_fill_viridis(discrete = TRUE) 
 figure10
 ggsave(
     file = "svg/figure_10.svg",
@@ -809,8 +808,7 @@ figure12 <- ggplot(datmm, aes(x = Q1.1, fill = Choice)) +
         legend.title = element_blank(),
         legend.position = 'bottom'
     ) +
-    guides(fill = guide_legend(nrow = 2, byrow = TRUE)) + 
-    ggtitle("Concerns When Being Hired As Software Development Staff")
+    guides(fill = guide_legend(nrow = 2, byrow = TRUE)) 
 figure12
 ggsave(
     file = "svg/figure_12.svg",
@@ -991,8 +989,7 @@ figure16 <- ggplot(dat, aes(x = Q1.1, fill = Q8.4)) +
         legend.title = element_blank(),
         plot.title = element_text(hjust = 0.5),
         legend.position = 'bottom'
-    ) +
-    ggtitle("Does Institution Consider Software Contributions In Performance Reviews Or Promotion Cases")
+    ) 
 figure16
 ggsave(
     file = "svg/figure_16.svg",
@@ -1040,8 +1037,7 @@ figure17 <- ggplot(dat, aes(x = Q1.1, fill = Q8.5)) +
         plot.title = element_text(hjust = 0.5),
         legend.position = 'bottom'
     ) +
-    guides(fill = guide_legend(nrow = 2, byrow = TRUE)) +
-    ggtitle("Importance Of Software Contributions During Performance Review Or Promotion")
+    guides(fill = guide_legend(nrow = 2, byrow = TRUE)) 
 figure17
 ggsave(
     file = "svg/figure_17.svg",
