@@ -223,12 +223,13 @@ figure1 <- datm %>%
         legend.title = element_blank(),
        plot.title = element_text(hjust = 0.5),
         legend.position = "bottom",
-        axis.title.y = element_text(size = 12)
+        axis.title.y = element_text(size = 13)
     ) +
     labs(
         y = "Percent of time"
     )   + theme(axis.text.x = element_text(vjust = -4),
-                legend.spacing.x = unit(1.0, 'cm')) 
+                legend.spacing.x = unit(1.0, 'cm')) +
+    theme(strip.text.x = element_text(size = 12))
 figure1
 ggsave(
     file = "svg/figure_1.svg",
@@ -541,8 +542,12 @@ datm = reshape2::melt(
 
 datm$Choice = as.numeric(datm$Choice)
 
+datm_non <- datm %>% filter(!is.na(datm$Choice))
 
-figure7 <- ggplot(datm, aes(x = Source, fill = Q1.1, y = Choice)) +
+nrow(datm)
+nrow(datm_non)
+
+figure7 <- ggplot(datm_non, aes(x = Source, fill = Q1.1, y = Choice)) +
     geom_boxplot(fatten = NULL, outlier.size = .5) +
     scale_fill_viridis(discrete = TRUE) +
     stat_summary(
